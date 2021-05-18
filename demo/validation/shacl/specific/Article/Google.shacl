@@ -1,0 +1,76 @@
+:ValidGoogleArticle a sh:NodeShape;
+    schema:name "Google Article";
+    schema:description "Adding Article structured data to your news, blog, and sports article page can enhance your appearance in Google Search results.\nhttps://developers.google.com/search/docs/data-types/article";
+    schema:schemaVersion "https://schema.org/version/12.0/";
+    schema:author [
+        a schema:Person;
+        schema:givenName    "Elwin";
+        schema:familyName   "Huaman"
+    ];
+    sh:targetClass schema:Article, schema:NewsArticle, schema:BlogPosting;
+    sh:property [
+		sh:path schema:author;
+        sh:or (
+			[sh:class schema:Person]
+			[sh:class schema:Organization]
+		);
+		sh:or (
+			[sh:node :ValidGooglePerson]
+			[sh:node :ValidGoogleOrganization]
+		);
+        sh:minCount 1;
+        sh:severity sh:Violation;
+        schema:description "Required. Person or Organization.";
+	];
+    sh:property [
+        sh:path schema:datePublished;
+        sh:node :ValidSchemaDateTime;
+        sh:minCount 1;
+        sh:severity sh:Violation;
+        schema:url "https://schema.org/datePublished";
+        schema:description "Required. date of publish.";
+    ];
+    sh:property [
+        sh:path schema:headline;
+        sh:node :Text;
+        sh:minCount 1;
+        sh:severity sh:Violation;
+        schema:url "https://schema.org/headline";
+        schema:description "The headline of the article.";
+    ];
+    sh:property [
+        sh:path schema:image;
+        sh:or (
+			[sh:node :ImageObject]
+			[sh:node :URL]
+		);
+        sh:minCount 1;
+        sh:severity sh:Violation;
+        schema:url "https://schema.org/image";
+        schema:description "The image of the article.";
+    ];
+    sh:property [
+        sh:path schema:publisher;
+        sh:class schema:Organization;
+        sh:node :ValidGoogleOrganization;
+        sh:minCount 1;
+        sh:severity sh:Violation;
+        schema:url "https://schema.org/description";
+        schema:description "Summary describing the recipe.";
+    ];
+    sh:property [
+        sh:path schema:dateModified;
+        sh:node :ValidSchemaDateTime;
+        sh:minCount 1;
+        sh:severity sh:Warning;
+        schema:url "https://schema.org/dateModified";
+        schema:description "dateModified of the article.";
+    ];
+    sh:property [
+        sh:path schema:mainEntityOfPage;
+        sh:node :ValidSchemaSchemaURL;
+        sh:minCount 1;
+        sh:severity sh:Warning;
+        schema:url "https://schema.org/mainEntityOfPage";
+        schema:description "The canonical URL of the article page";
+    ].
