@@ -88,4 +88,4 @@ This easy steps should be enough to customize this demo for your needs, **BUT**
 * I created a SHACL shape for [Article](https://developers.google.com/search/docs/data-types/article), wich defines the conformance of Article objects to Google guidelines.
 * I updated the [full.shacl](validation/shacl/full.shacl) file and run the schemarama.
 
-<p align="center"><img src="/demo/assets/google-validation-report.png?raw=true" alt="Verification report based on Google guidelines" width="400px"/></p>
+<p align="center"><img src="/demo/assets/google-validation-report.png?raw=true" alt="Verification report based on Google guidelines" width="800px"/></p>
