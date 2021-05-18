@@ -82,3 +82,10 @@ language selector on the top right corner. To do so, remove the option you **DON
     
 This easy steps should be enough to customize this demo for your needs, **BUT**
 **If you face issues or have a concern, please feel free to ping us by creating an issue**
+
+## My customization
+
+* I created a SHACL shape for [Article](https://developers.google.com/search/docs/data-types/article), wich defines the conformance of Article objects to Google guidelines.
+* I updated the [full.shacl](validation/shacl/full.shacl) file and run the schemarama.
+
+<p align="center"><img src="/demo/assets/google-validation-report.png?raw=true" alt="Verification report based on Google guidelines" width="400px"/></p>
